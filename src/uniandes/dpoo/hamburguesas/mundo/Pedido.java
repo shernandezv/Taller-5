@@ -164,4 +164,14 @@ public class Pedido
         out.close( );
     }
 
+	public void mostrarInformacion() {
+		System.out.println("\nInformación pedido número: " + this.idPedido +".");
+		System.out.println("Cliente: " + this.nombreCliente +".");
+		System.out.println("Dirección: " + this.direccionCliente +".");
+		System.out.println("Productos:");
+		for (Producto p: this.productos) {
+			System.out.println(p.toString());
+		}
+	}
+
 }

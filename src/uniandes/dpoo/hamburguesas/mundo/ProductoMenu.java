@@ -52,5 +52,10 @@ public class ProductoMenu implements Producto
 
         return sb.toString( );
     }
-
+    
+    public String toString() {
+    	String texto;
+    	texto = "Nombre: " + this.nombre + ". Precio: " + this.precioBase + ".";
+    	return texto;
+    }
 }

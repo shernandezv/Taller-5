@@ -32,6 +32,14 @@ public class ProductoAjustado implements Producto
         agregados = new ArrayList<Ingrediente>( );
         eliminados = new ArrayList<Ingrediente>( );
     }
+    
+    public void agregarIngrediente(Ingrediente ingrediente) {
+    	this.agregados.add(ingrediente);
+    }
+    
+    public void eliminarIngrediente(Ingrediente ingrediente) {
+    	this.eliminados.add(ingrediente);
+    }
 
     @Override
     public String getNombre( )
@@ -45,9 +53,18 @@ public class ProductoAjustado implements Producto
     @Override
     public int getPrecio( )
     {
-        return 0;
+    	int precioBase = this.productoBase.getPrecio();
+    	for (Ingrediente i: agregados) {
+    		precioBase += i.getCostoAdicional();
+    	}
+        return precioBase;
     }
-
+    
+    public String toString() {
+    	String texto;
+    	texto = "Nombre: " + this.productoBase.getNombre() + ". Precio Ajustado: " + getPrecio() + ".";
+    	return texto;
+    }
     /**
      * Genera el texto que debe aparecer en la factura.
      * 
@@ -57,7 +74,7 @@ public class ProductoAjustado implements Producto
     public String generarTextoFactura( )
     {
         StringBuffer sb = new StringBuffer( );
-        sb.append( productoBase );
+        sb.append( productoBase.generarTextoFactura() );
         for( Ingrediente ing : agregados )
         {
             sb.append( "    +" + ing.getNombre( ) );

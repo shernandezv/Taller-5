@@ -55,7 +55,7 @@ public class Combo implements Producto
             precio += i.getPrecio( );
         }
 
-        return ( int ) ( precio * descuento );
+        return ( int )  (precio * (1 - descuento));
     }
 
     /**
@@ -73,5 +73,10 @@ public class Combo implements Producto
 
         return sb.toString( );
     }
-
+    
+    public String toString() {
+    	String texto;
+    	texto = "Nombre: " + this.nombreCombo + ". Precio: " + getPrecio() + ".";
+    	return texto;
+    }
 }

@@ -1,0 +1,10 @@
+Cliente: Santiago
+Dirección: SD_307
+----------------
+corral
+            14000
+    +lechuga                1000    +tomate                1000    +cebolla                1000    -queso mozzarella    -huevo    -queso americano            17000
+----------------
+Precio Neto:  17000
+IVA:          3230
+Precio Total: 20230

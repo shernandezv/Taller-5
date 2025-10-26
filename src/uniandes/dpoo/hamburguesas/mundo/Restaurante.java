@@ -100,12 +100,20 @@ public class Restaurante
     {
         if( pedidoEnCurso == null )
             throw new NoHayPedidoEnCursoException( );
-
+        this.pedidos.add(pedidoEnCurso);
         String nombreArchivo = PREFIJO_FACTURAS + pedidoEnCurso.getIdPedido( ) + ".txt";
         pedidoEnCurso.guardarFactura( new File( CARPETA_FACTURAS + nombreArchivo ) );
         pedidoEnCurso = null;
     }
-
+    
+    public void consultarPedido(int idPedido) {
+    	for (Pedido p: this.pedidos) {
+    		if (p.getIdPedido() == idPedido) {
+    			p.mostrarInformacion();
+    		}
+    	}
+    }
+    
     /**
      * Retorna el pedido actual en curso. Si no hay un pedido en curso, retorna null.
      * 
