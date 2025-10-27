@@ -172,6 +172,11 @@ public class Pedido
 		for (Producto p: this.productos) {
 			System.out.println(p.toString());
 		}
+		System.out.println("Precio pedido: " + getPrecioTotalPedido());
+	}
+	
+	public static void reiniciarContadorPedidos() {
+	    numeroPedidos = 0;
 	}
 
 }

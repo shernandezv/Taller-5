@@ -19,10 +19,6 @@ public class Principal {
 		nuevoPedido();
 		consultarPedido();
 	}
-	
-	private void consultarPedido() {
-		this.restaurante.consultarPedido(0);
-	}
 
 	public void cargarArchivos() {
 		File menu = new File("data/menu.txt");
@@ -47,7 +43,7 @@ public class Principal {
 			System.out.println(c.toString());
 		}
 	}
-	
+	 
 	public void nuevoPedido(){
 		try {
 			this.restaurante.iniciarPedido("Santiago", "SD_307");
@@ -63,6 +59,10 @@ public class Principal {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void consultarPedido() {
+		this.restaurante.consultarPedido(0);
 	}
 	
 	public static void main(String[] args) {
